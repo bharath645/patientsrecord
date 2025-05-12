@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patient Tracking System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div id="authSection">
+      <h2>Sign Up</h2>
+      <input type="text" id="signupUsername" placeholder="Username" />
+      <input type="password" id="signupPassword" placeholder="Password" />
+      <button onclick="signUp()">Sign Up</button>
+
+      <h2>Login</h2>
+      <input type="text" id="loginUsername" placeholder="Username" />
+      <input type="password" id="loginPassword" placeholder="Password" />
+      <button onclick="login()">Login</button>
+    </div>
+
+    <div id="mainSection" style="display: none;">
+      <h2>Patient Tracker</h2>
+      <div>
+        <button onclick="showPatientForm()">Add Patient</button>
+        <button onclick="listPatients()">List of Patients</button>
+      </div>
+
+      <div id="patientForm" style="display: none;">
+        <h3>Add Patient</h3>
+        <input type="text" id="pName" placeholder="Name" />
+        <input type="number" id="pAge" placeholder="Age" />
+        <input type="text" id="pGender" placeholder="Gender" />
+        <input type="text" id="pAddress" placeholder="Address" />
+        <input type="text" id="pPhone" placeholder="Phone Number" />
+        <input type="text" id="pSymptoms" placeholder="Symptoms" />
+        <button onclick="addPatient()">Submit</button>
+      </div>
+
+      <div id="patientList" style="margin-top: 20px;"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
