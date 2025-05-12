@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Patient Tracking System</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div id="authSection">
-      <h2>Sign Up</h2>
-      <input type="text" id="signupUsername" placeholder="Username" />
-      <input type="password" id="signupPassword" placeholder="Password" />
-      <button onclick="signUp()">Sign Up</button>
 
-      <h2>Login</h2>
-      <input type="text" id="loginUsername" placeholder="Username" />
-      <input type="password" id="loginPassword" placeholder="Password" />
-      <button onclick="login()">Login</button>
-    </div>
+  <!-- Authentication Section -->
+  <div id="authSection">
+    <h2>Signup</h2>
+    <input type="text" id="signupUsername" placeholder="Username">
+    <input type="password" id="signupPassword" placeholder="Password">
+    <button onclick="signUp()">Sign Up</button>
 
-    <div id="mainSection" style="display: none;">
-      <h2>Patient Tracker</h2>
-      <div>
-        <button onclick="showPatientForm()">Add Patient</button>
-        <button onclick="listPatients()">List of Patients</button>
-      </div>
+    <h2>Login</h2>
+    <input type="text" id="loginUsername" placeholder="Username">
+    <input type="password" id="loginPassword" placeholder="Password"><br>
+    <label>
+      <input type="checkbox" id="rememberMe"> Remember Me
+    </label><br>
+    <button onclick="login()">Login</button>
+  </div>
 
-      <div id="patientForm" style="display: none;">
-        <h3>Add Patient</h3>
-        <input type="text" id="pName" placeholder="Name" />
-        <input type="number" id="pAge" placeholder="Age" />
-        <input type="text" id="pGender" placeholder="Gender" />
-        <input type="text" id="pAddress" placeholder="Address" />
-        <input type="text" id="pPhone" placeholder="Phone Number" />
-        <input type="text" id="pSymptoms" placeholder="Symptoms" />
-        <button onclick="addPatient()">Submit</button>
-      </div>
+  <!-- Main Section -->
+  <div id="mainSection" style="display:none;">
+    <button onclick="logout()" id="logoutBtn">Logout</button>
+    <h2>Welcome to the Patient Tracking System</h2>
+<hr>
 
-      <div id="patientList" style="margin-top: 20px;"></div>
-    </div>
+<h3>Add New Patient</h3>
+<input type="text" id="patientName" placeholder="Name">
+<input type="number" id="patientAge" placeholder="Age">
+<select id="patientGender">
+  <option value="">Select Gender</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+  <option value="Other">Other</option>
+</select>
+<input type="text" id="patientAddress" placeholder="Address">
+<input type="text" id="patientPhone" placeholder="Phone Number">
+<textarea id="patientSymptoms" placeholder="Symptoms" rows="3"></textarea>
+<button onclick="addPatient()">Add Patient</button>
+
+<hr>
+
+<button onclick="showPatients()">List of Patients</button>
+<div id="patientList"></div>
+
+    <!-- Add more functionality here -->
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
